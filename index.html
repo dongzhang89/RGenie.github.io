@@ -165,9 +165,9 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <!-- 图片网格（两行三列） -->
-      <div class="columns is-multiline">
-        <!-- 第一行图片 -->
-        <div class="column is-one-third">
+      <div class="image-grid">
+        <!-- 第一行 -->
+        <div class="image-row">
           <div class="image-card">
             <div class="image-container">
               <img src="./static/images/demo1.jpg" 
@@ -179,9 +179,7 @@
             <button class="edit-button">Edit</button>
             <div class="image-description">原始版本</div>
           </div>
-        </div>
-
-        <div class="column is-one-third">
+          
           <div class="image-card">
             <div class="image-container">
               <img src="./static/images/demo2.jpg" 
@@ -193,9 +191,7 @@
             <button class="edit-button">Edit</button>
             <div class="image-description">原始版本</div>
           </div>
-        </div>
-
-        <div class="column is-one-third">
+          
           <div class="image-card">
             <div class="image-container">
               <img src="./static/images/demo3.jpg" 
@@ -208,9 +204,9 @@
             <div class="image-description">原始版本</div>
           </div>
         </div>
-
-        <!-- 第二行图片 -->
-        <div class="column is-one-third">
+        
+        <!-- 第二行 -->
+        <div class="image-row">
           <div class="image-card">
             <div class="image-container">
               <img src="./static/images/demo4.jpg" 
@@ -222,9 +218,7 @@
             <button class="edit-button">Edit</button>
             <div class="image-description">原始版本</div>
           </div>
-        </div>
-
-        <div class="column is-one-third">
+          
           <div class="image-card">
             <div class="image-container">
               <img src="./static/images/demo5.jpg" 
@@ -236,9 +230,7 @@
             <button class="edit-button">Edit</button>
             <div class="image-description">原始版本</div>
           </div>
-        </div>
-
-        <div class="column is-one-third">
+          
           <div class="image-card">
             <div class="image-container">
               <img src="./static/images/demo6.jpg" 
@@ -257,84 +249,93 @@
 </section>
 
 <style>
-  /* 卡片容器样式 */
+  /* 网格容器 */
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  
+  /* 行容器 */
+  .image-row {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  
+  /* 图片卡片 */
   .image-card {
-    border-radius: 8px;
+    flex: 1;
+    min-width: 0; /* 防止内容溢出 */
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
   }
-
+  
   .image-card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
-
-  /* 图片容器样式 */
+  
+  /* 图片容器 */
   .image-container {
     width: 100%;
-    height: 200px;
+    height: 150px; /* 缩小图片高度 */
     overflow: hidden;
   }
-
+  
   .image-item {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.5s ease;
+    transition: opacity 0.3s ease;
   }
-
-  /* Edit按钮样式 */
+  
+  /* Edit按钮 */
   .edit-button {
     display: block;
     width: 100%;
-    padding: 8px 0;
+    padding: 6px 0;
     background-color: #4a77d7;
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     transition: background-color 0.3s;
   }
-
+  
   .edit-button:hover {
     background-color: #3a67c7;
   }
-
-  /* 图片描述样式 */
+  
+  /* 图片描述 */
   .image-description {
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    font-size: 13px;
-    color: #666;
-    background-color: #f9f9f9;
-  }
-
-  /* 网格布局调整 */
-  .columns {
-    gap: 20px;
-    margin-top: 10px;
+    font-size: 12px;
+    color: #555;
+    background-color: #f5f5f5;
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // 获取所有Edit按钮
     const editButtons = document.querySelectorAll('.edit-button');
     
     editButtons.forEach(button => {
       button.addEventListener('click', function() {
-        const container = this.parentElement;
-        const img = container.querySelector('.image-item');
-        const desc = container.querySelector('.image-description');
+        const card = this.parentElement;
+        const img = card.querySelector('.image-item');
+        const desc = card.querySelector('.image-description');
         
-        // 淡出动画
+        // 淡出效果
         img.style.opacity = '0.5';
         
         setTimeout(() => {
-          // 切换图片
+          // 切换图片状态
           if (img.src.includes('_edited')) {
             img.src = img.dataset.original;
             desc.textContent = '原始版本';
@@ -345,11 +346,11 @@
             this.textContent = 'Revert';
           }
           
-          // 淡入动画
+          // 淡入效果
           setTimeout(() => {
             img.style.opacity = '1';
           }, 50);
-        }, 300);
+        }, 200);
       });
     });
   });
