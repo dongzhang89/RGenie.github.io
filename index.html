@@ -161,6 +161,168 @@
 </section>
 
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- 图片网格（两行三列） -->
+      <div class="columns is-multiline">
+        <!-- 第一行 3 张图 -->
+        <div class="column is-one-third">
+          <div class="image-container">
+            <img src="./static/images/demo1.jpg" 
+                 data-original="./static/images/demo1.jpg"
+                 data-edited="./static/images/demo1_edited.jpg" 
+                 data-desc-original="原始场景1: 男性版本"
+                 data-desc-edited="编辑场景1: 女性版本"
+                 class="image-item interpolation-image" 
+                 alt="场景1 原始版本">
+            <div class="image-description">原始场景1: 男性版本</div>
+          </div>
+        </div>
+        
+        <div class="column is-one-third">
+          <div class="image-container">
+            <img src="./static/images/demo2.jpg" 
+                 data-original="./static/images/demo2.jpg"
+                 data-edited="./static/images/demo2_edited.jpg"
+                 data-desc-original="原始场景2: 男性版本"
+                 data-desc-edited="编辑场景2: 女性版本"
+                 class="image-item interpolation-image" 
+                 alt="场景2 原始版本">
+            <div class="image-description">原始场景2: 男性版本</div>
+          </div>
+        </div>
+        
+        <div class="column is-one-third">
+          <div class="image-container">
+            <img src="./static/images/demo3.jpg" 
+                 data-original="./static/images/demo3.jpg"
+                 data-edited="./static/images/demo3_edited.jpg"
+                 data-desc-original="原始场景3: 男性版本"
+                 data-desc-edited="编辑场景3: 女性版本"
+                 class="image-item interpolation-image" 
+                 alt="场景3 原始版本">
+            <div class="image-description">原始场景3: 男性版本</div>
+          </div>
+        </div>
+
+        <!-- 第二行 3 张图 -->
+        <div class="column is-one-third">
+          <div class="image-container">
+            <img src="./static/images/demo4.jpg" 
+                 data-original="./static/images/demo4.jpg"
+                 data-edited="./static/images/demo4_edited.jpg"
+                 data-desc-original="原始场景4: 男性版本"
+                 data-desc-edited="编辑场景4: 女性版本"
+                 class="image-item interpolation-image" 
+                 alt="场景4 原始版本">
+            <div class="image-description">原始场景4: 男性版本</div>
+          </div>
+        </div>
+        
+        <div class="column is-one-third">
+          <div class="image-container">
+            <img src="./static/images/demo5.jpg" 
+                 data-original="./static/images/demo5.jpg"
+                 data-edited="./static/images/demo5_edited.jpg"
+                 data-desc-original="原始场景5: 男性版本"
+                 data-desc-edited="编辑场景5: 女性版本"
+                 class="image-item interpolation-image" 
+                 alt="场景5 原始版本">
+            <div class="image-description">原始场景5: 男性版本</div>
+          </div>
+        </div>
+        
+        <div class="column is-one-third">
+          <div class="image-container">
+            <img src="./static/images/demo6.jpg" 
+                 data-original="./static/images/demo6.jpg"
+                 data-edited="./static/images/demo6_edited.jpg"
+                 data-desc-original="原始场景6: 男性版本"
+                 data-desc-edited="编辑场景6: 女性版本"
+                 class="image-item interpolation-image" 
+                 alt="场景6 原始版本">
+            <div class="image-description">原始场景6: 男性版本</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .image-item {
+    width: 100%;
+    height: 220px; /* 固定高度保证整齐 */
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .image-item:hover {
+    transform: scale(1.03);
+  }
+
+  .image-description {
+    padding: 12px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    background-color: #f9f9f9;
+  }
+
+  .columns {
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.image-item');
+
+    images.forEach(img => {
+      // 预加载编辑版图片
+      const editedImg = new Image();
+      editedImg.src = img.dataset.edited;
+
+      img.addEventListener('click', function() {
+        const container = this.parentElement;
+        const description = container.querySelector('.image-description');
+        
+        // 淡出效果
+        this.style.opacity = '0';
+        description.style.opacity = '0';
+        
+        setTimeout(() => {
+          // 切换图片和描述
+          if (this.src.includes('_edited')) {
+            this.src = this.dataset.original;
+            description.textContent = this.dataset.descOriginal;
+          } else {
+            this.src = this.dataset.edited;
+            description.textContent = this.dataset.descEdited;
+          }
+          
+          // 淡入效果
+          setTimeout(() => {
+            this.style.opacity = '1';
+            description.style.opacity = '1';
+          }, 50);
+        }, 300);
+      });
+    });
+  });
+</script>
 
 
 <section class="hero teaser">
