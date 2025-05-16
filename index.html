@@ -2,43 +2,28 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Reasoning-Guided Generative Image Editing.">
+  <meta name="description" content="Reasoning-Guided Generative Image Editing">
   <meta name="keywords" content="Image Editing, Reasoning, Generative Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>R-Genie: Reasoning-Guided Generative Image Editing</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
 <body>
 
@@ -53,35 +38,20 @@
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://dongzhang89.github.io/">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+        <span class="icon"><i class="fas fa-home"></i></span>
       </a>
-
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
+        <a class="navbar-link">More Research</a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://openreview.net/forum?id=vJkktqyU8B">
-            Efficient Transformer Adapter
-          </a>
-          <a class="navbar-item" href="https://arxiv.org/abs/2501.01114">
-            Image Quality Enhancement
-          </a>
-          <a class="navbar-item" href="https://arxiv.org/abs/2009.12547">
-            Causal Intervention for WSSS
-          </a>
-          <a class="navbar-item" href="https://arxiv.org/abs/2007.09451">
-            Feature Pyramid Transformer
-          </a>
+          <a class="navbar-item" href="https://openreview.net/forum?id=vJkktqyU8B">Efficient Transformer Adapter</a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2501.01114">Image Quality Enhancement</a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2009.12547">Causal Intervention for WSSS</a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2007.09451">Feature Pyramid Transformer</a>
         </div>
       </div>
     </div>
-
   </div>
 </nav>
-
 
 <section class="hero">
   <div class="hero-body">
@@ -90,69 +60,44 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">R-Genie: Reasoning-Guided Generative Image Editing</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://dongzhang89.github.io/">Dong Zhang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="#">Lingfeng He</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://ruiyan1995.github.io/">Rui Yan</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://muzishen.github.io/">Fei Shen</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=en">Jinhui Tang</a><sup>2</sup>
-            </span>
+            <span class="author-block"><a href="https://dongzhang89.github.io/">Dong Zhang</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Lingfeng He</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://ruiyan1995.github.io/">Rui Yan</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://muzishen.github.io/">Fei Shen</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=ByBLlEwAAAAJ&hl=en">Jinhui Tang</a><sup>2</sup></span>
           </div>
-
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>The Hong Kong University of Science and Technology,</span>
             <span class="author-block"><sup>2</sup>Nanjing University of Science and Technology,</span>
             <span class="author-block"><sup>3</sup>The National University of Singapore</span>
           </div>
-
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Code Link. -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
-                  </a>
+                </a>
               </span>
-              <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="far fa-images"></i></span>
                   <span>Dataset</span>
-                  </a>
+                </a>
+              </span>
             </div>
-
           </div>
         </div>
       </div>
@@ -163,80 +108,36 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- 两行三列图片网格 -->
       <div class="image-grid-container">
-        <!-- 第一行 -->
         <div class="image-grid-row">
+          [1-3].map(i => (`
           <div class="image-card">
             <div class="image-container">
-              <img src="./static/images/demo1.jpg" 
-                   data-original="./static/images/demo1.jpg"
-                   data-edited="./static/images/demo1_edited.jpg" 
+              <img src="./static/images/demo${i}.jpg" 
+                   data-original="./static/images/demo${i}.jpg"
+                   data-edited="./static/images/demo${i}_edited.jpg" 
                    class="image-item" 
-                   alt="场景1">
+                   alt="场景${i}">
             </div>
             <button class="edit-button">Edit</button>
             <div class="image-description">原始版本</div>
           </div>
-          <div class="image-card">
-            <div class="image-container">
-              <img src="./static/images/demo2.jpg" 
-                   data-original="./static/images/demo2.jpg"
-                   data-edited="./static/images/demo2_edited.jpg" 
-                   class="image-item" 
-                   alt="场景2">
-            </div>
-            <button class="edit-button">Edit</button>
-            <div class="image-description">原始版本</div>
-          </div>
-          <div class="image-card">
-            <div class="image-container">
-              <img src="./static/images/demo3.jpg" 
-                   data-original="./static/images/demo3.jpg"
-                   data-edited="./static/images/demo3_edited.jpg" 
-                   class="image-item" 
-                   alt="场景3">
-            </div>
-            <button class="edit-button">Edit</button>
-            <div class="image-description">原始版本</div>
-          </div>
+          `)).join('')}
         </div>
-        
-        <!-- 第二行 -->
         <div class="image-grid-row">
+          [4-6].map(i => (`
           <div class="image-card">
             <div class="image-container">
-              <img src="./static/images/demo4.jpg" 
-                   data-original="./static/images/demo4.jpg"
-                   data-edited="./static/images/demo4_edited.jpg" 
+              <img src="./static/images/demo${i}.jpg" 
+                   data-original="./static/images/demo${i}.jpg"
+                   data-edited="./static/images/demo${i}_edited.jpg" 
                    class="image-item" 
-                   alt="场景4">
+                   alt="场景${i}">
             </div>
             <button class="edit-button">Edit</button>
             <div class="image-description">原始版本</div>
           </div>
-          <div class="image-card">
-            <div class="image-container">
-              <img src="./static/images/demo5.jpg" 
-                   data-original="./static/images/demo5.jpg"
-                   data-edited="./static/images/demo5_edited.jpg" 
-                   class="image-item" 
-                   alt="场景5">
-            </div>
-            <button class="edit-button">Edit</button>
-            <div class="image-description">原始版本</div>
-          </div>
-          <div class="image-card">
-            <div class="image-container">
-              <img src="./static/images/demo6.jpg" 
-                   data-original="./static/images/demo6.jpg"
-                   data-edited="./static/images/demo6_edited.jpg" 
-                   class="image-item" 
-                   alt="场景6">
-            </div>
-            <button class="edit-button">Edit</button>
-            <div class="image-description">原始版本</div>
-          </div>
+          `)).join('')}
         </div>
       </div>
     </div>
@@ -244,193 +145,95 @@
 </section>
 
 <style>
-  /* 网格容器 */
-  .image-grid-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* 行间距 */
-    width: 100%;
-  }
-  
-  /* 每行容器 */
-  .image-grid-row {
-    display: flex;
-    gap: 20px; /* 列间距 */
-    width: 100%;
-  }
-  
-  /* 图片卡片 */
-  .image-card {
-    flex: 1; /* 自动平分宽度 */
-    min-width: 0; /* 防止flex子项溢出 */
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.1);
-  }
-  
-  .image-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  }
-  
-  /* 图片容器 - 关键自适应设置 */
-  .image-container {
-    width: 100%;
-    aspect-ratio: 16/9; /* 保持16:9宽高比 */
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .image-item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
-    transform-origin: center center;
-  }
-  
-  /* Edit按钮 */
-  .edit-button {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #4a77d7;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  }
-  
-  .edit-button:hover {
-    background-color: #3a67c7;
-    transform: scale(1.03);
-  }
-  
-  /* 图片描述 */
-  .image-description {
-    padding: 10px;
-    text-align: center;
-    font-size: 13px;
-    color: #666;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-  }
-  
-  /* 响应式调整 */
-  @media (max-width: 768px) {
-    .image-grid-row {
-      flex-direction: column; /* 小屏幕下改为垂直排列 */
-      gap: 15px;
-    }
-    .image-card {
-      width: 100%; /* 小屏幕下占满宽度 */
-    }
-    .image-container {
-      aspect-ratio: 16/9; /* 保持比例 */
-    }
-  }
+.image-grid-container { display: flex; flex-direction: column; gap: 25px; width: 100%; }
+.image-grid-row { display: flex; gap: 20px; width: 100%; }
+.image-card { flex: 1; min-width: 0; display: flex; flex-direction: column; border-radius: 8px; 
+  overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+  transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.1); }
+.image-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.image-container { width: 100%; aspect-ratio: 16/9; overflow: hidden; position: relative; }
+.image-item { width: 100%; height: 100%; object-fit: cover; 
+  transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1); transform-origin: center center; }
+.edit-button { width: 100%; padding: 10px 0; background-color: #4a77d7; color: white; 
+  border: none; cursor: pointer; font-size: 14px; font-weight: 600; 
+  transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+.edit-button:hover { background-color: #3a67c7; transform: scale(1.03); }
+.image-description { padding: 10px; text-align: center; font-size: 13px; color: #666; 
+  background-color: #f9f9f9; transition: all 0.3s ease; }
+@media (max-width: 768px) {
+  .image-grid-row { flex-direction: column; gap: 15px; }
+  .image-card { width: 100%; }
+}
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const editButtons = document.querySelectorAll('.edit-button');
-    
-    editButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const container = this.parentElement;
-        const img = container.querySelector('.image-item');
-        const desc = container.querySelector('.image-description');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.edit-button').forEach(button => {
+    button.addEventListener('click', function() {
+      const container = this.parentElement;
+      const img = container.querySelector('.image-item');
+      const desc = container.querySelector('.image-description');
+      
+      img.style.transition = 'all 0.4s cubic-bezier(0.36, 0, 0.66, -0.56)';
+      img.style.opacity = '0.6';
+      img.style.transform = 'scale(0.95)';
+      
+      setTimeout(() => {
+        const isEdited = img.src.includes('_edited');
+        img.src = isEdited ? img.dataset.original : img.dataset.edited;
+        desc.textContent = isEdited ? '原始版本' : '编辑版本';
+        this.textContent = isEdited ? 'Edit' : 'Revert';
         
-        // 第一阶段：淡出+缩小
-        img.style.transition = 'all 0.4s cubic-bezier(0.36, 0, 0.66, -0.56)';
-        img.style.opacity = '0.6';
-        img.style.transform = 'scale(0.95)';
-        
-        setTimeout(() => {
-          // 切换图片源
-          if (img.src.includes('_edited')) {
-            img.src = img.dataset.original;
-            desc.textContent = '原始版本';
-            this.textContent = 'Edit';
-          } else {
-            img.src = img.dataset.edited;
-            desc.textContent = '编辑版本';
-            this.textContent = 'Revert';
-          }
-          
-          // 第二阶段：淡入+弹性放大
-          img.style.transition = 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
-          img.style.opacity = '0';
-          img.style.transform = 'scale(1.05)';
-          
-          // 强制重绘确保动画触发
-          void img.offsetWidth;
-          
-          // 执行最终动画
-          img.style.opacity = '1';
-          img.style.transform = 'scale(1)';
-        }, 400);
-      });
-    });
-    
-    // 预加载所有图片避免切换闪烁
-    window.addEventListener('load', () => {
-      const images = document.querySelectorAll('.image-item');
-      images.forEach(img => {
-        const preload = new Image();
-        preload.src = img.dataset.edited;
-      });
+        img.style.transition = 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        img.style.opacity = '0';
+        img.style.transform = 'scale(1.05)';
+        void img.offsetWidth;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 400);
     });
   });
+  
+  // 预加载图片
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.image-item').forEach(img => {
+      new Image().src = img.dataset.edited;
+    });
+  });
+});
 </script>
-
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/fig1.png"
-      class="interpolation-image"
-      alt="Interpolate start reference image."/>
+      <img src="./static/images/fig1.png" class="interpolation-image" alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-justified is-size-6">
-        By integrating multimodal large language models, we endow generative image editing models with intricate reasoning capabilities. Our method interprets implicit user-provided contextual knowledge to control the generative pixel-level editing process, ensuring results that align faithfully with the intended modifications. The underline indicates the content that requires reasoning-based processing.
+        By integrating multimodal large language models, we endow generative image editing models with intricate reasoning capabilities...
       </h2>
     </div>
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            While recent advances in image editing have enabled impressive visual synthesis capabilities, current methods remain constrained by explicit textual instructions and limited editing operations, lacking deep comprehension of implicit user intentions and contextual reasoning. 
-          </p>
-          <p>
-            In this work, we introduce a new image editing paradigm: reasoning-guided generative editing, which synthesizes images based on complex, multi-faceted textual queries accepting world knowledge and intention inference. To facilitate this task, we first construct a comprehensive dataset featuring over 1,000 image-instruction-edit triples that incorporate rich reasoning contexts and real-world knowledge. We then propose R-Genie: a reasoning-guided generative image editor, which synergizes the generation power of diffusion models with advanced reasoning capabilities of multimodal large language models. R-Genie incorporates a reasoning-attention mechanism to bridge linguistic understanding with visual synthesis, enabling it to handle intricate editing requests involving abstract user intentions and contextual reasoning relations. Extensive experimental results validate that R-Genie can equip diffusion models with advanced reasoning-based editing capabilities, unlocking new potentials for intelligent image synthesis.
-          </p>
+          <p>While recent advances in image editing have enabled impressive visual synthesis capabilities...</p>
+          <p>In this work, we introduce a new image editing paradigm: reasoning-guided generative editing...</p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/fig2.png"
-      class="interpolation-image"
-      alt="Interpolate start reference image."/>
+      <img src="./static/images/fig2.png" class="interpolation-image" alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-justified is-size-6">
-        R-Genie employs a MLLM to process an introduced <REASON> token alongside textual and visual input tokens. The MLLM-generated <EDIT> token is subsequently routed through a reasoning-attention bridge and a hierarchical reasoning module, which perform bidirectional reasoning by integrating visual features through cross-modal interactions. Finally, a discrete diffusion model reconstructs the target visual features in discrete space, ensuring alignment between the expected modified visual semantic output and the reconstructed visual representation.
+        R-Genie employs a MLLM to process an introduced <REASON> token alongside textual and visual input tokens...
       </h2>
     </div>
   </div>
@@ -439,11 +242,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/fig3.png"
-      class="interpolation-image"
-      alt="Interpolate start reference image."/>
+      <img src="./static/images/fig3.png" class="interpolation-image" alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-justified is-size-6">
-        Qualitative result comparisons with other instruction-based image editing methods. In contrast, our method effectively grounds the instruction in commonsense knowledge before performing spatially aware edits in the generative process, leading to more accurate and coherent results.
+        Qualitative result comparisons with other instruction-based image editing methods...
       </h2>
     </div>
   </div>
@@ -461,24 +262,12 @@
   </div>
 </section>
 
-
 <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
+          <p>This means you are free to borrow the source code of this website...</p>
         </div>
       </div>
     </div>
