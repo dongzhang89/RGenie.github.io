@@ -227,17 +227,23 @@
         transform: scale(1.03);
     }
 
-    /* 图片描述 - 修改后的样式 */
+    /* 图片描述 - 优化后的样式 */
     .image-description {
-        padding: 10px;
+        padding: 10px 8px;
         text-align: center;
-        font-size: clamp(12px, 1.2vw, 16px); /* 使用clamp实现响应式字体大小 */
+        font-size: clamp(11px, 1.1vw, 15px); /* 稍微减小字体以适应更多文本 */
+        line-height: 1.4; /* 增加行高提高可读性 */
         color: #666;
         background-color: #f9f9f9;
         transition: all 0.3s ease;
-        white-space: nowrap; /* 防止文字换行 */
-        overflow: hidden; /* 隐藏溢出内容 */
-        text-overflow: ellipsis; /* 显示省略号 */
+        word-wrap: break-word; /* 允许长单词换行 */
+        overflow-wrap: break-word; /* 现代浏览器的长单词换行 */
+        white-space: normal; /* 确保文本正常换行 */
+        height: auto; /* 自动调整高度 */
+        min-height: 40px; /* 最小高度确保视觉一致性 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* 响应式调整 */
@@ -265,35 +271,35 @@
             <div class="image-grid-container">
                 <!-- 第一行 -->
                 <div class="image-grid-row">
-                    <div class="image-card">
+                    <div class="image-card" data-index="1">
                         <div class="image-container">
                             <img src="./static/images/demo1.jpg" 
                                 data-original="./static/images/demo1.jpg"
                                 data-edited="./static/images/demo1_edited.jpg" 
                                 class="image-item" 
-                                alt="场景1">
+                                alt="Demo image 1">
                         </div>
                         <button class="edit-button">Edit</button>
                         <div class="image-description" data-original-text="In this picture, who has poor eyesight? Exchange him with a firefighter." data-edited-text="In this picture, who has poor eyesight? Exchange him with a firefighter.">In this picture, who has poor eyesight? Exchange him with a firefighter.</div>
                     </div>
-                    <div class="image-card">
+                    <div class="image-card" data-index="2">
                         <div class="image-container">
                             <img src="./static/images/demo2.jpg" 
                                 data-original="./static/images/demo2.jpg"
                                 data-edited="./static/images/demo2_edited.jpg" 
                                 class="image-item" 
-                                alt="场景2">
+                                alt="Demo image 2">
                         </div>
                         <button class="edit-button">Edit</button>
                         <div class="image-description" data-original-text="In this picture, who has poor eyesight? Exchange him with a firefighter." data-edited-text="In this picture, who has poor eyesight? Exchange him with a firefighter.">In this picture, who has poor eyesight? Exchange him with a firefighter.</div>
                     </div>
-                    <div class="image-card">
+                    <div class="image-card" data-index="3">
                         <div class="image-container">
                             <img src="./static/images/demo3.jpg" 
                                 data-original="./static/images/demo3.jpg"
                                 data-edited="./static/images/demo3_edited.jpg" 
                                 class="image-item" 
-                                alt="场景3">
+                                alt="Demo image 3">
                         </div>
                         <button class="edit-button">Edit</button>
                         <div class="image-description" data-original-text="In this picture, who has poor eyesight? Exchange him with a firefighter." data-edited-text="In this picture, who has poor eyesight? Exchange him with a firefighter.">In this picture, who has poor eyesight? Exchange him with a firefighter.</div>
@@ -302,35 +308,35 @@
             
                 <!-- 第二行 -->
                 <div class="image-grid-row">
-                    <div class="image-card">
+                    <div class="image-card" data-index="4">
                         <div class="image-container">
                             <img src="./static/images/demo4.jpg" 
                                 data-original="./static/images/demo4.jpg"
                                 data-edited="./static/images/demo4_edited.jpg" 
                                 class="image-item" 
-                                alt="场景4">
+                                alt="Demo image 4">
                         </div>
                         <button class="edit-button">Edit</button>
                         <div class="image-description" data-original-text="In this picture, who has poor eyesight? Exchange him with a firefighter." data-edited-text="In this picture, who has poor eyesight? Exchange him with a firefighter.">In this picture, who has poor eyesight? Exchange him with a firefighter.</div>
                     </div>
-                    <div class="image-card">
+                    <div class="image-card" data-index="5">
                         <div class="image-container">
                             <img src="./static/images/demo5.jpg" 
                                 data-original="./static/images/demo5.jpg"
                                 data-edited="./static/images/demo5_edited.jpg" 
                                 class="image-item" 
-                                alt="场景5">
+                                alt="Demo image 5">
                         </div>
                         <button class="edit-button">Edit</button>
                         <div class="image-description" data-original-text="In this picture, who has poor eyesight? Exchange him with a firefighter." data-edited-text="In this picture, who has poor eyesight? Exchange him with a firefighter.">In this picture, who has poor eyesight? Exchange him with a firefighter.</div>
                     </div>
-                    <div class="image-card">
+                    <div class="image-card" data-index="6">
                         <div class="image-container">
                             <img src="./static/images/demo6.jpg" 
                                 data-original="./static/images/demo6.jpg"
                                 data-edited="./static/images/demo6_edited.jpg" 
                                 class="image-item" 
-                                alt="场景6">
+                                alt="Demo image 6">
                         </div>
                         <button class="edit-button">Edit</button>
                         <div class="image-description" data-original-text="In this picture, who has poor eyesight? Exchange him with a firefighter." data-edited-text="In this picture, who has poor eyesight? Exchange him with a firefighter.">In this picture, who has poor eyesight? Exchange him with a firefighter.</div>
@@ -343,52 +349,44 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const editButtons = document.querySelectorAll('.edit-button');
-    
-        editButtons.forEach(button => {
+        // 处理编辑按钮点击事件
+        document.querySelectorAll('.edit-button').forEach(button => {
             button.addEventListener('click', function() {
                 const container = this.parentElement;
                 const img = container.querySelector('.image-item');
                 const desc = container.querySelector('.image-description');
-            
+                
                 // 第一阶段：淡出+缩小
                 img.style.transition = 'all 0.4s cubic-bezier(0.36, 0, 0.66, -0.56)';
                 img.style.opacity = '0.6';
                 img.style.transform = 'scale(0.95)';
-            
+                
                 setTimeout(() => {
                     // 切换图片源和描述文本
-                    if (img.src.includes('_edited')) {
-                        img.src = img.dataset.original;
-                        desc.textContent = desc.dataset.originalText;
-                        this.textContent = 'Edit';
-                    } else {
-                        img.src = img.dataset.edited;
-                        desc.textContent = desc.dataset.editedText;
-                        this.textContent = 'Revert';
-                    }
-                
+                    const isEdited = img.src.includes('_edited');
+                    img.src = isEdited ? img.dataset.original : img.dataset.edited;
+                    desc.textContent = isEdited ? desc.dataset.originalText : desc.dataset.editedText;
+                    this.textContent = isEdited ? 'Edit' : 'Revert';
+                    
                     // 第二阶段：淡入+弹性放大
                     img.style.transition = 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
                     img.style.opacity = '0';
                     img.style.transform = 'scale(1.05)';
-                
+                    
                     // 强制重绘确保动画触发
                     void img.offsetWidth;
-                
+                    
                     // 执行最终动画
                     img.style.opacity = '1';
                     img.style.transform = 'scale(1)';
                 }, 400);
             });
         });
-    
+        
         // 预加载所有图片避免切换闪烁
         window.addEventListener('load', () => {
-            const images = document.querySelectorAll('.image-item');
-            images.forEach(img => {
-                const preload = new Image();
-                preload.src = img.dataset.edited;
+            document.querySelectorAll('.image-item').forEach(img => {
+                (new Image()).src = img.dataset.edited;
             });
         });
     });
