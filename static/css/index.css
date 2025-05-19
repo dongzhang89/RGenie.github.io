@@ -155,3 +155,20 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.edit-button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(128, 128, 128, 0.75); /* 灰色背景，75%透明度 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.edit-button:hover {
+    background-color: rgba(108, 108, 108, 0.75); /* 深一点的灰色，保持75%透明度 */
+    transform: scale(1.03);
+}
