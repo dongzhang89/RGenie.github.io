@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Calibri', sans-serif;
 }
 
 
@@ -24,11 +24,12 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: 'Calibri', sans-serif;
 }
 
 
 .publication-title {
+    font-family: 'Calibri', sans-serif;
 }
 
 .publication-banner {
@@ -47,12 +48,8 @@ body {
 .publication-header .hero-body {
 }
 
-.publication-title {
-    font-family: 'Google Sans', sans-serif;
-}
-
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Calibri', sans-serif;
 }
 
 .publication-venue {
