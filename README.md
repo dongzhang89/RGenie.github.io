@@ -1,6 +1,6 @@
 # Nerfies
 
-This is the repository that contains source code for the [R-Genie website](RGenie.github.io).
+This is the repository that contains source code for the [R-Genie website](https://dongzhang89.github.io/RGenie.github.io/).
 
 If you find Nerfies useful for your work please cite:
 ```
