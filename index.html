@@ -475,6 +475,53 @@
   </div>
 </section>
 
+<section class="section" id="todo">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">TO DO LIST</h2>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <ul class="todo-list">
+            <li>
+              <span class="icon has-text-primary">
+                <i class="fas fa-check-circle"></i>
+              </span>
+              <span>Release training weight</span>
+            </li>
+            <li>
+              <span class="icon has-text-warning">
+                <i class="fas fa-clock"></i>
+              </span>
+              <span>Release dataset</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.todo-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.todo-list .icon {
+  margin-right: 1rem;
+}
+
+.todo-list span:not(.icon) {
+  flex: 1;
+}
+</style>
 
 <footer class="footer">
   <div class="container">
