@@ -4,14 +4,12 @@ This is the repository that contains source code for the [R-Genie website](https
 
 If you find Nerfies useful for your work please cite:
 ```
-@misc{zhang2025rgeniereasoningguidedgenerativeimage,
-      title={R-Genie: Reasoning-Guided Generative Image Editing}, 
-      author={Dong Zhang and Lingfeng He and Rui Yan and Fei Shen and Jinhui Tang},
-      year={2025},
-      eprint={2505.17768},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2505.17768}, 
+@article{zhang2025r,
+  title={R-Genie: Reasoning-Guided Generative Image Editing},
+  author={Zhang, Dong and He, Lingfeng and Yan, Rui and Shen, Fei and Tang, Jinhui},
+  journal={arXiv preprint arXiv:2505.17768},
+  year={2025}
+}
 }
 ```
 
